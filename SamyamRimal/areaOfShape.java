@@ -37,5 +37,6 @@ public class areaOfShape {
        else{
         System.out.println("Invalid Choice");
        }
+       
     }
 }
