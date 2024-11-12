@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class function {
 
     public static int numSum(int a, int b){
-        int sum=a+b;
-        System.out.println("Sum of "+a+ " and " +b+ " is " +sum);
+        int sum=a*b;
+        System.out.println("Product of "+a+ " and " +b+ " is " +sum);
         return 1;
     }
     public static void main(String[] args) {
