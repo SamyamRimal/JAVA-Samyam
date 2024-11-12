@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            background-image: url('pg.jpg');
+            background-position: center;
+            display: flex;
+            background-repeat: no-repeat;
+            background-size: cover;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            height: 100vh;
+        }
+
+        .login-container {
+            background-color: transparent;
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 20px;
+            width: 300px;
+            text-align: center;
+        }
+
+        .login-container h2 {
+            text-shadow: 0 0 20px #000000, 0 0 40px #0081bc;
+            word-spacing: 5000000px;
+            color: rgb(107, 25, 5);
+            text-decoration: underline overline;
+        }
+
+        .login-container input {
+            background-color: whitesmoke;
+            width: 100%;
+            padding: 8px; 
+            margin: 8px 0;
+            border-radius: 20px;
+            box-sizing: border-box;
+        }
+
+        .login-container button {
+            width: 20%;
+            background-color: rgb(64, 168, 23);
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 10px;
+            color: white; 
+            margin-top: 5px;
+        }
+        .login-container button:hover{
+            background-color:rgb(50, 122, 21);
+            transform: translateY(-3px); 
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>LOGIN</h2>
+        <form id="loginForm">
+            <input type="text" id="username" name="username" placeholder="Username" required>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <a href="ecommers.html"><button type="button" onclick="validateLogin()">Login</button></a>
+        </form>
+    </div>
+    <script>
+        function validateLogin() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            
+            if (username === 'samyam' && password === 'rimal@123') {
+                alert('LOGIN SUCCESSFUL');
+            } else {
+                alert('Wrong Username or Password');
+            }
+        }
+    </script>
+</body>
+</html>
