@@ -16,7 +16,7 @@ public class arrayPrep {
         }
 
         for(int i=0;i<size;i++){
-            System.out.print("Name of "+(i+1)+"person that you have entered is "+name[i]);
+            System.out.print("Name of "+(i+1)+" person that you have entered is "+name[i]);
 
         }
     }
