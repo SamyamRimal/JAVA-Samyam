@@ -7,7 +7,7 @@ public class StringsBuilders {
         sb.setCharAt(0, 'A');;
         System.out.println(sb);
         //To add or insert some leter to it
-        sb.insert(0, "Rimal");
+        sb.insert(6, "Rimal");
         System.out.println(sb);
         //To delete some character from it
         sb.delete(5, 6);
