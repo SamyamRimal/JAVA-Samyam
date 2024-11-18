@@ -12,7 +12,8 @@ public class bankManagement {
             System.out.println("2. Deposit");
             System.out.println("3. Withdraw");
             System.out.println("4. Check Balance");
-            System.out.println("5. Exit");
+            System.out.println("5. Transfer Balance");
+            System.out.println("6. Exit");
             System.out.print("Enter your choice: ");
             int choice = sc.nextInt();
         
@@ -22,7 +23,8 @@ public class bankManagement {
             case 2: deposit(); break;
             case 3: withdraw(); break;
             case 4: checkBalance(); break;
-            case 5: {
+            case 5: transfer(); break;
+            case 6: {
                 System.out.println("Thank you for visiting SR Bank."); 
                 System.exit(0);
                 break;
@@ -34,10 +36,12 @@ public class bankManagement {
         }
 
         private static void createAccount() {
-            System.out.println("Enter your name:");
-            String name = sc.nextLine();
+            System.out.println("Enter your name: ");
+            String name = sc.next();
             System.out.println("Enter your account number:");
             int accountNumber = sc.nextInt();
+            sc.nextLine(); // Consume the leftover newline character
+
             System.out.println("Enter Initial deposite:");
             double initialDeposit = sc.nextDouble();
 
@@ -96,6 +100,30 @@ public class bankManagement {
                 else{
                     System.out.println("Account does not exist");
                 }
+        }
+
+        private static void transfer(){
+            System.out.print("Enter your account number: ");
+            int senderAccount = sc.nextInt();
+            if(senderAccount != 0 && accounts.containsKey(senderAccount)){
+                System.out.print("Enter the account number you want to transfer to: ");
+                int reciverAccount = sc.nextInt();
+                if(accounts.containsKey(senderAccount) && accounts.containsKey(reciverAccount)){
+                    System.out.print("Enter the amount you want to transfer: ");
+                    double transfer = sc.nextDouble();
+                    if(transfer >=senderAccount){
+                        accounts.put(senderAccount, accounts.get(senderAccount) - transfer);
+                    accounts.put(reciverAccount, accounts.get(reciverAccount) + transfer); 
+                    System.out.println("Transfer successfully." );
+                }          
+                else {
+                    System.out.println("Invalid amount");
+                }
+                }
+                else{
+                    System.out.println("Account does not exist");
+                }
+            }
         }
     }
 
